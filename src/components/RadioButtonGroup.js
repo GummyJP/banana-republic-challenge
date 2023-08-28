@@ -6,12 +6,17 @@ const RadioButtonGroup = ({ options }) => {
       {options.map((radioItem, index) => (
         <>
           <label className="radio-item-label">
-            <input type="radio" value={radioItem.value} name={radioItem.name} />
-              <img
-                className="radio-button-image"
-                src={radioItem.defaultImage}
-                alt={radioItem.imageAlt}
-              />
+            <input
+              type="radio"
+              id={radioItem.id}
+              value={radioItem.value}
+              name={radioItem.name}
+            />
+            <img
+              className="radio-button-image"
+              src={radioItem.defaultImage}
+              alt={radioItem.imageAlt}
+            />
             {radioItem.text}
           </label>
         </>
@@ -20,10 +25,12 @@ const RadioButtonGroup = ({ options }) => {
   );
 };
 
-RadioButtonGroup.propTypes = {
-  options: PropTypes.array,
+RadioButtonGroup.defaultProps = {
+  options: [],
 };
 
-// const headingStyle = { color: 'red', backgroundColor: 'black' };
+RadioButtonGroup.propTypes = {
+  options: PropTypes.array.isRequired,
+};
 
 export default RadioButtonGroup;

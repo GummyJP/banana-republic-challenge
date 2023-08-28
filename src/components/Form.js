@@ -1,24 +1,23 @@
-import * as PropTypes from 'prop-types';
+//Component Imports
 import RadioButtonGroup from './RadioButtonGroup';
-import Button from './Button';
 
 //images
-import maleImageDefault from '../mars-symbol.svg';
-import femaleImageDefault from '../venus-symbol.svg';
-import carImageDefault from '../card.svg';
+import maleImageDefault from '../assets/icon/mars-symbol.svg';
+import femaleImageDefault from '../assets/icon/venus-symbol.svg';
+import carImageDefault from '../assets/icon/card.svg';
 
 const genderOptions = [
   {
     text: 'Male',
     value: 'M',
-    name: 'maleRadioItem',
+    name: 'genderRadioGroup',
     defaultImage: maleImageDefault,
     imageAlt: 'MALE',
   },
   {
     text: 'Female',
     value: 'F',
-    name: 'femaleRadioItem',
+    name: 'genderRadioGroup',
     defaultImage: femaleImageDefault,
     imageAlt: 'MALE',
   },
@@ -28,21 +27,21 @@ const membershipOptions = [
   {
     text: 'Classic',
     value: 'C',
-    name: 'clasicRadioItem',
+    name: 'membershipOptionGroup',
     defaultImage: carImageDefault,
     imageAlt: '',
   },
   {
     text: 'Silver',
     value: 'S',
-    name: 'silverRadioOption',
+    name: 'membershipOptionGroup',
     defaultImage: carImageDefault,
     imageAlt: '',
   },
   {
     text: 'Gold',
     value: 'G',
-    name: 'goldRadioOption',
+    name: 'membershipOptionGroup',
     defaultImage: carImageDefault,
     imageAlt: '',
   },
@@ -94,15 +93,5 @@ const Form = () => {
 const validateForm = () => {
   console.log('Submitting');
 };
-
-Form.defaultProps = {
-  title: 'BANANA REPUBLIC',
-};
-
-Form.propTypes = {
-  title: PropTypes.string.isRequired,
-};
-
-// const headingStyle = { color: 'red', backgroundColor: 'black' };
 
 export default Form;
