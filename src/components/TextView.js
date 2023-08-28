@@ -31,7 +31,7 @@ TextView.defaultProps = {
 };
 
 TextView.propTypes = {
-  title: PropTypes.bool.isRequired,
+  isButtonPressed: PropTypes.bool.isRequired,
 };
 
 export default TextView;

@@ -1,4 +1,5 @@
 import * as PropTypes from 'prop-types';
+import React from 'react';
 
 const Button = ({ type, text, onButtonPress }) => {
   if (type === 'submit') {

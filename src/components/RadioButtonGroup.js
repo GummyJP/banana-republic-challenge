@@ -1,9 +1,16 @@
 import * as PropTypes from 'prop-types';
+import React, { useState } from 'react';
 
-const RadioButtonGroup = ({ options }) => {
+const RadioButtonGroup = ({ options, defaultValue}) => {
+  const [selected, setSelected] = useState(defaultValue);
+
+  const handleChange = (event , id) => {
+    setSelected(event.target.value);
+  };
+
   return (
-    <>
-      {options.map((radioItem, index) => (
+    <div className='radio-group'>
+      {options.map((radioItem) => (
         <>
           <label className="radio-item-label">
             <input
@@ -11,17 +18,19 @@ const RadioButtonGroup = ({ options }) => {
               id={radioItem.id}
               value={radioItem.value}
               name={radioItem.name}
+              onChange={(e) =>handleChange(e,radioItem.id)}
+              defaultChecked={selected === radioItem.value}
             />
             <img
               className="radio-button-image"
-              src={radioItem.defaultImage}
+              src={document.getElementById(radioItem.id) !== null && document.getElementById(radioItem.id).value === selected ? radioItem.activeImage : radioItem.defaultImage}
               alt={radioItem.imageAlt}
             />
             {radioItem.text}
           </label>
         </>
       ))}
-    </>
+    </div>
   );
 };
 

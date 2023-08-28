@@ -3,47 +3,65 @@ import RadioButtonGroup from './RadioButtonGroup';
 
 //images
 import maleImageDefault from '../assets/icon/mars-symbol.svg';
+import maleImageActive from '../assets/icon/mars-symbol--white.svg';
 import femaleImageDefault from '../assets/icon/venus-symbol.svg';
-import carImageDefault from '../assets/icon/card.svg';
+import femaleImageActive from '../assets/icon/venus-symbol--white.svg';
+import cardImageDefault from '../assets/icon/card.svg';
+import cardImageActive from '../assets/icon/card--white.svg';
 
 const genderOptions = [
   {
+    id: 'male-radio-select',
     text: 'Male',
     value: 'M',
     name: 'genderRadioGroup',
     defaultImage: maleImageDefault,
+    activeImage: maleImageActive,
     imageAlt: 'MALE',
+    selected: false,
   },
   {
+    id: 'female-radio-select',
     text: 'Female',
     value: 'F',
     name: 'genderRadioGroup',
     defaultImage: femaleImageDefault,
+    activeImage: femaleImageActive,
     imageAlt: 'MALE',
+    selected: false,
   },
 ];
 
 const membershipOptions = [
   {
+    id: 'classic-radio-select',
     text: 'Classic',
     value: 'C',
     name: 'membershipOptionGroup',
-    defaultImage: carImageDefault,
+    defaultImage: cardImageDefault,
+    activeImage: cardImageActive,
     imageAlt: '',
+    selected: false,
   },
   {
+    id: 'silver-radio-select',
     text: 'Silver',
     value: 'S',
     name: 'membershipOptionGroup',
-    defaultImage: carImageDefault,
+    defaultImage: cardImageDefault,
+    activeImage: cardImageActive,
     imageAlt: '',
+    selected: false,
   },
   {
+    id: 'gold-radio-select',
     text: 'Gold',
     value: 'G',
     name: 'membershipOptionGroup',
-    defaultImage: carImageDefault,
+    defaultImage: cardImageDefault,
+    activeImage: cardImageActive,
     imageAlt: '',
+    selected: false,
   },
 ];
 
@@ -56,7 +74,7 @@ const Form = () => {
       </div>
       <div className="form-control">
         <label className="form-item-label">Gender</label>
-        <RadioButtonGroup options={genderOptions} />
+        <RadioButtonGroup options={genderOptions} defaultValue={'M'} />
       </div>
       <div className="form-control">
         <label className="form-item-label">Date of Birth</label>
@@ -76,7 +94,7 @@ const Form = () => {
       </div>
       <div className="form-control">
         <label className="form-item-label">Membership </label>
-        <RadioButtonGroup options={membershipOptions} />
+        <RadioButtonGroup options={membershipOptions} defaultValue={'C'} />
       </div>
       <div className="form-control align-right">
         <button className="cancel-button" type="reset">
