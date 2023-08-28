@@ -1,0 +1,287 @@
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.left-section {
+  flex: 43%;
+  background-color: #ffd300;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centered-image {
+  max-width: 80%;
+  max-height: 80%;
+  margin-bottom: 0px;
+}
+
+.left-header {
+  margin-top: 15%;
+  font-size: 45px;
+  color: #373d40;
+}
+
+.left-text {
+  font-size: 24px;
+  color: #373d40;
+  text-align: center;
+  padding: 0 20px;
+  margin-top: 0px;
+  margin-bottom: 10%;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.second-image-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #373d40;
+  width: 80px; 
+  height: 80px;
+  border-radius: 50%; 
+  margin-top: 20px; 
+}
+
+.second-image.rotated {
+  transform: rotate(540deg);
+  transition: transform 1s ease-in-out;
+}
+
+.second-image-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.second-image {
+  transition: transform 0.5s;
+  cursor: pointer;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.right-section {
+  flex: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.user-form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+  background-color: white;
+  text-align: left;
+}
+
+.user-form h2 {
+  margin-bottom: 15px;
+}
+
+.user-form label,
+.user-form input,
+.user-form button {
+  margin-bottom: 10px;
+}
+
+.orange-container {
+  position: absolute;
+  background-color: orange;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  right: 0;
+  transition: opacity 0.6s ease-in-out, right 0.6s ease-in-out, width 0.6s ease-in-out;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0 0px;
+}
+
+[type=radio] { 
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* IMAGE STYLES */
+[type=radio] + img  {
+  cursor: pointer;
+}
+
+/* CHECKED STYLES */
+[type=radio]:checked + img {
+  align-items: center;
+  justify-content: center;
+  background-color:  #cad7dd;
+  border-radius: 50%; 
+}
+
+.orange-container.active {
+  right: -100%;
+  opacity: 1;
+  width: 0;
+}
+
+.orange-heading {
+  font-size: 44px;
+  margin-top: 0px;
+}
+
+.orange-paragraph {
+  font-size: 22px;
+  margin-top: 50px;
+}
+
+.orange-text {
+  margin-top: 20%;
+  color: #373d40;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+form {
+  background: white;
+  display: flex;
+  justify-content: space-around;
+  margin: 0 ;
+  max-width: 100%;
+  width: 75%;
+  padding: 30px 50px;
+}
+
+.form-control {
+  min-height: 5%;
+  height: 10%;
+}
+
+input {
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  padding: 20px;
+}
+
+input{
+  font-size: 20px;
+  width: 55%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+::placeholder {
+  color: #cad7dd;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  font-size: 20px;
+  content: url(./assets/icon/calendar.svg);
+  
+}
+
+input:focus {
+  border: 3px solid #cad7dd;
+}
+
+.form-item-label {
+  vertical-align:middle;
+  width: 22%;
+  display: inline-block ;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+
+.radio-item-label {
+  display: inline-block ;
+  width: 15%;
+  margin-right: 20px;
+  height: 45%;
+}
+
+.submit-button{
+  width: 35%;
+  height: 60%;
+  color: white;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color:#49c8a8 ;
+  border: none;
+}
+
+.radio-button-image{
+  vertical-align:middle;
+  padding: 10%;
+  margin-right: 20px;
+  height: 65%;
+}
+
+.cancel-button{
+  width: 40%;
+  height: 60%;
+  color: #373d40;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color:#ffffff ;
+  border: none;
+}
+
+.align-right {
+  padding-top: 2%;
+  padding-left: 40%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .centered-image {
+    margin-top: 20px;
+  }
+
+  .left-section {
+    flex: 100%;
+    height: 100%;
+    padding-top: 22%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .left-header {
+    font-size: 40px;
+    margin-left: 25%;
+    margin-right: 10%;
+  }
+
+  .left-text{
+    font-size: 22px;
+    margin-top: 0px;
+    margin-bottom: 5%;
+    margin-left: 13%;
+    margin-right: 13%;
+  }
+
+  .second-image-container{
+    margin-bottom: 20%;
+  }
+
+  .right-section {
+    flex: 100%; /* Take the entire width */
+  }
+}
