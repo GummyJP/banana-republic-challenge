@@ -1,34 +1,31 @@
-import * as PropTypes from 'prop-types';
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-const RadioButtonGroup = ({ options, defaultValue}) => {
+const RadioButtonGroup = ({ options, defaultValue }) => {
   const [selected, setSelected] = useState(defaultValue);
 
-  const handleChange = (event , id) => {
+  const handleChange = (event, id) => {
     setSelected(event.target.value);
   };
 
   return (
-    <div className='radio-group'>
+    <div className="radio-group">
       {options.map((radioItem) => (
-        <>
-          <label className="radio-item-label">
-            <input
-              type="radio"
-              id={radioItem.id}
-              value={radioItem.value}
-              name={radioItem.name}
-              onChange={(e) =>handleChange(e,radioItem.id)}
-              defaultChecked={selected === radioItem.value}
-            />
-            <img
-              className="radio-button-image"
-              src={document.getElementById(radioItem.id) !== null && document.getElementById(radioItem.id).value === selected ? radioItem.activeImage : radioItem.defaultImage}
-              alt={radioItem.imageAlt}
-            />
-            {radioItem.text}
-          </label>
-        </>
+        <label key={radioItem.id} className="radio-item-label">
+          <input
+            type="radio"
+            value={radioItem.value}
+            name={radioItem.name}
+            checked={selected === radioItem.value}
+            onChange={(e) => handleChange(e, radioItem.id)}
+          />
+          <img
+            className="radio-button-image"
+            src={selected === radioItem.value ? radioItem.activeImage : radioItem.defaultImage}
+            alt={radioItem.imageAlt}
+          />
+          {radioItem.text}
+        </label>
       ))}
     </div>
   );
@@ -39,7 +36,18 @@ RadioButtonGroup.defaultProps = {
 };
 
 RadioButtonGroup.propTypes = {
-  options: PropTypes.array.isRequired,
+  options: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      value: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      activeImage: PropTypes.string.isRequired,
+      defaultImage: PropTypes.string.isRequired,
+      imageAlt: PropTypes.string.isRequired,
+      text: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  defaultValue: PropTypes.string.isRequired,
 };
 
 export default RadioButtonGroup;

@@ -66,41 +66,40 @@ const membershipOptions = [
 ];
 
 const Form = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    console.log('Submitting');
+    // Add your form submission logic here
+  };
+
   return (
-    <form className="user-form" onSubmit={validateForm}>
-      <div className="form-control">
-        <label className="form-item-label">Name</label>
-        <input type="text" placeholder="" />
-      </div>
-      <div className="form-control">
-        <label className="form-item-label">Gender</label>
-        <RadioButtonGroup options={genderOptions} defaultValue={'M'} />
-      </div>
-      <div className="form-control">
-        <label className="form-item-label">Date of Birth</label>
+    <form className="user-form" onSubmit={handleSubmit}>
+      <FormGroup label="Name">
+        <input type="text" placeholder="Enter your name" />
+      </FormGroup>
+      <FormGroup label="Gender">
+        <RadioButtonGroup options={genderOptions} defaultValue="M" />
+      </FormGroup>
+      <FormGroup label="Date of Birth">
         <input type="date" />
-      </div>
-      <div className="form-control">
-        <label className="form-item-label">Email</label>
-        <input type="text" placeholder="" />
-      </div>
-      <div className="form-control">
-        <label className="form-item-label">Mobile</label>
-        <input type="text" placeholder="+91 98765 43210" />
-      </div>
-      <div className="form-control">
-        <label className="form-item-label">Customer ID</label>
-        <input type="text" placeholder="576802-ERD0348-45" />
-      </div>
-      <div className="form-control">
-        <label className="form-item-label">Membership </label>
-        <RadioButtonGroup options={membershipOptions} defaultValue={'C'} />
-      </div>
+      </FormGroup>
+      <FormGroup label="Email">
+        <input type="email" placeholder="Enter your email" />
+      </FormGroup>
+      <FormGroup label="Mobile">
+        <input type="tel" placeholder="+91 98765 43210" />
+      </FormGroup>
+      <FormGroup label="Customer ID">
+        <input type="text" placeholder="Enter your customer ID" />
+      </FormGroup>
+      <FormGroup label="Membership">
+        <RadioButtonGroup options={membershipOptions} defaultValue="C" />
+      </FormGroup>
       <div className="form-control align-right">
         <button className="cancel-button" type="reset">
           CANCEL
         </button>
-        <button className="submit-button" type="button">
+        <button className="submit-button" type="submit">
           SAVE
         </button>
       </div>
@@ -108,8 +107,13 @@ const Form = () => {
   );
 };
 
-const validateForm = () => {
-  console.log('Submitting');
+const FormGroup = ({ label, children }) => {
+  return (
+    <div className="form-control">
+      <label className="form-item-label">{label}</label>
+      {children}
+    </div>
+  );
 };
 
 export default Form;

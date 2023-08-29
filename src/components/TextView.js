@@ -1,11 +1,12 @@
+import React from 'react';
 import * as PropTypes from 'prop-types';
 
 const TextView = ({ isButtonPressed }) => {
   return (
-    <div className={`orange-container ${isButtonPressed ? 'active' : ''}`}>
-      <div className="orange-text">
+    <div className={`diary-container ${isButtonPressed ? 'active' : ''}`}>
+      <div className="diary-text">
         <h2 className="orange-heading">My world today</h2>
-        <p className="orange-paragraph">
+        <p className="diary-paragraph">
           Pellentesque habitant morbi tristique senectus et nets et malesuada
           fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
           ultricies eget, tempor sit amet, ante.{' '}

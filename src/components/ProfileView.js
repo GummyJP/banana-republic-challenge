@@ -1,11 +1,12 @@
+import React from 'react';
 import * as PropTypes from 'prop-types';
 
 const ProfileView = ({faceSVG , handleButtonClick, isButtonPressed , arrowSVG ,arrowRotatedSVG}) => {
   return (
-    <div className="left-section">
+    <div className="profile-section">
         <img className="profile-image" src={faceSVG} alt="Centered" />
-        <h1 className="left-header">Front-end challenge!</h1>
-        <p className="left-text">
+        <h1 className="profile-header">Front-end challenge!</h1>
+        <p className="profile-text">
           This is a design that you will need to code up and impress us.
         </p>
         <button

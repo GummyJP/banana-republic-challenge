@@ -3,7 +3,7 @@
   height: 100vh;
 }
 
-.left-section {
+.profile-section {
   flex: 43%;
   background-color: #ffd300;
   display: flex;
@@ -18,14 +18,14 @@
   margin-bottom: 0px;
 }
 
-.left-header {
+.profile-header {
   text-align: center;
   margin-top: 15%;
   font-size: 45px;
   color: #373d40;
 }
 
-.left-text {
+.profile-text {
   font-size: 24px;
   color: #373d40;
   text-align: center;
@@ -86,7 +86,7 @@
   text-align: left;
 }
 
-.orange-container {
+.diary-container {
   position: absolute;
   background-color: orange;
   width: 100%;
@@ -100,7 +100,7 @@
   transition: opacity 1s ease-in-out, left 1s ease-in-out, width 1s ease-in-out;
 }
 
-.orange-container.active {
+.diary-container.active {
   opacity: 1;
   width: 0;
 }
@@ -135,12 +135,12 @@
   margin-top: 0px;
 }
 
-.orange-paragraph {
+.diary-paragraph {
   font-size: 22px;
   margin-top: 50px;
 }
 
-.orange-text {
+.diary-text {
   margin-top: 20%;
   color: #373d40;
   margin-left: 20%;
@@ -244,7 +244,7 @@ input:focus {
     display: block;
   }
 
-  .left-section {
+  .profile-section {
     height: 100%;
   }
 
@@ -296,12 +296,12 @@ input:focus {
     padding-left: 0%;
   }
   
-  .orange-container {
+  .diary-container {
     top: 0;
     transition: opacity 1s ease-in-out, top 1s ease-in-out, height 1s ease-in-out;
   }
 
-  .orange-container.active {
+  .diary-container.active {
     height: 0%;
   }
 
@@ -318,7 +318,7 @@ input:focus {
     max-height: 100%;
   }
 
-  .orange-text {
+  .diary-text {
     margin: 4%;
   }
 
@@ -327,11 +327,11 @@ input:focus {
     margin-top: 20px;
   }
 
-  .orange-paragraph{
+  .diary-paragraph{
     font-size: 20px;
   }
 
-  .left-header {
+  .profile-header {
     margin-top: 15%;
     font-size: 45px;
     color: #373d40;
