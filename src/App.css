@@ -6,6 +6,7 @@
 
 /* Profile View Styling */
 .profile-section {
+  height: 100vh;
   flex: 43%;
   background-color: #ffd300;
   display: flex;
@@ -63,7 +64,6 @@
 }
 
 .right-section {
-  min-height: 830px;
   flex: 70%;
   display: flex;
   align-items: center;
