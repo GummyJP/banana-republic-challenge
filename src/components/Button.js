@@ -8,7 +8,7 @@ const ButtonTypes = {
 
 const Button = ({ type, text, onButtonPress, className }) => {
   return (
-    <button onClick={onButtonPress} className={`button ${className}`}>
+    <button onClick={onButtonPress} className={`button ${className}`} >
       {text}
     </button>
   );
@@ -17,14 +17,14 @@ const Button = ({ type, text, onButtonPress, className }) => {
 Button.defaultProps = {
   text: 'SAVE',
   type: ButtonTypes.SUBMIT,
-  className: 'default-button', // Set a default class name
+  className: 'default-button', 
 };
 
 Button.propTypes = {
   text: PropTypes.string.isRequired,
   type: PropTypes.oneOf(Object.values(ButtonTypes)).isRequired,
   onButtonPress: PropTypes.func.isRequired,
-  className: PropTypes.string, // You can specify prop type for className if needed
+  className: PropTypes.string,
 };
 
 export default Button;

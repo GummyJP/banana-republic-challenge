@@ -11,21 +11,27 @@ const RadioButtonGroup = ({ options, defaultValue }) => {
   return (
     <div className="radio-group">
       {options.map((radioItem) => (
-        <label key={radioItem.id} className="radio-item-label">
-          <input
-            type="radio"
-            value={radioItem.value}
-            name={radioItem.name}
-            checked={selected === radioItem.value}
-            onChange={(e) => handleChange(e, radioItem.id)}
-          />
-          <img
-            className="radio-button-image"
-            src={selected === radioItem.value ? radioItem.activeImage : radioItem.defaultImage}
-            alt={radioItem.imageAlt}
-          />
-          {radioItem.text}
-        </label>
+        <>
+          <label key={radioItem.id} className="radio-item-label">
+            <input
+              type="radio"
+              value={radioItem.value}
+              name={radioItem.name}
+              checked={selected === radioItem.value}
+              onChange={(e) => handleChange(e, radioItem.id)}
+            />
+            <img
+              className="radio-button-image"
+              src={
+                selected === radioItem.value
+                  ? radioItem.activeImage
+                  : radioItem.defaultImage
+              }
+              alt={radioItem.imageAlt}
+            />
+          </label>
+          <div className="radio-item-text">{radioItem.text}</div>
+        </>
       ))}
     </div>
   );
@@ -45,7 +51,7 @@ RadioButtonGroup.propTypes = {
       defaultImage: PropTypes.string.isRequired,
       imageAlt: PropTypes.string.isRequired,
       text: PropTypes.string.isRequired,
-    })
+    }),
   ).isRequired,
   defaultValue: PropTypes.string.isRequired,
 };

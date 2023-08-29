@@ -1,8 +1,10 @@
 .container {
   display: flex;
   height: 100vh;
+  width: 100%;
 }
 
+/* Profile View Styling */
 .profile-section {
   flex: 43%;
   background-color: #ffd300;
@@ -12,21 +14,16 @@
   justify-content: center;
 }
 
-.centered-image {
-  max-width: 80%;
-  max-height: 80%;
-  margin-bottom: 0px;
-}
-
 .profile-header {
   text-align: center;
   margin-top: 15%;
-  font-size: 45px;
+  font-size: 210%;
   color: #373d40;
 }
 
 .profile-text {
-  font-size: 24px;
+  font-size: 130%;
+  font-weight: 600;
   color: #373d40;
   text-align: center;
   padding: 0 20px;
@@ -36,37 +33,37 @@
   margin-right: 20%;
 }
 
-.second-image-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #373d40;
-  width: 80px; 
-  height: 80px;
-  border-radius: 50%; 
-  margin-top: 20px; 
-}
-
-.second-image-button {
+.profile-toggle-button {
   background: none;
   border: none;
   padding: 0;
   cursor: pointer;
 }
 
-.second-image {
+.profile-toggle-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #373d40;
+  width: 60px; 
+  height: 60px;
+  border-radius: 50%; 
+}
+
+.profile-toggle-image {
   transition: transform 1s;
   cursor: pointer;
   max-width: 100%;
   max-height: 100%;
 }
 
-.second-image.rotated {
-  transform: rotate(540deg);
+.profile-toggle-image.rotated {
+  transform: rotate(-180deg);
   transition: transform 1s ease-in-out;
 }
 
 .right-section {
+  min-height: 830px;
   flex: 70%;
   display: flex;
   align-items: center;
@@ -74,10 +71,11 @@
   position: relative;
 }
 
+/* Form Styling */
 .user-form {
   display: flex;
   height: 100%;
-  width: 80%;
+  width: 70%;
   padding: 0;
   flex-direction: column;
   align-items: left;
@@ -86,9 +84,50 @@
   text-align: left;
 }
 
+.form-control {
+  /* min-height: 5%; */
+  /* height: 10%; */
+  padding: 1%;
+}
+
+.form-item-label {
+  color: #373d40;
+  width: 22%;
+  display: inline-block ;
+  /* font-family: sans-serif; */
+  font-size: 100%;
+}
+
+input{
+  background-color: #f5f8f9;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  font-size: 120%;
+  width: 76%;
+  padding: 3% ;
+  margin: 1% ;
+  box-sizing: border-box;
+  transition: 0.6s;
+  outline: none;
+  -webkit-transition: 0.5s;
+  font-size: 100%;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator {
+  font-size: 20px;
+  content: url(./assets/icon/calendar.svg);
+}
+
+input:focus {
+  border: 3px solid #cad7dd;
+}
+
+/* Text Container Styling */
 .diary-container {
   position: absolute;
   background-color: orange;
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
   opacity: 1;
@@ -105,15 +144,27 @@
   width: 0;
 }
 
+.diary-paragraph {
+  font-size: 22px;
+  margin-top: 50px;
+}
+
+.diary-text {
+  margin-top: 200px;
+  color: #373d40;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+/* Radio Group Component Styling */
 [type=radio] { 
   position: absolute;
   opacity: 0;
 }
 
 [type=radio] + img  {
-  align-items: center;
-  justify-content: center;
   background-color:  #f5f8f9;
+  padding: 15%;
   border-radius: 50%; 
   cursor: pointer;
 }
@@ -122,126 +173,74 @@
   background-color:  #cad7dd;
 }
 
-.radio-button-image{
-  width: 35px; 
-  height: 35px;
-  vertical-align:middle;
-  padding: 10%;
-  margin-right: 12px;
-}
-
-.orange-heading {
-  font-size: 44px;
-  margin-top: 0px;
-}
-
-.diary-paragraph {
-  font-size: 22px;
-  margin-top: 50px;
-}
-
-.diary-text {
-  margin-top: 20%;
-  color: #373d40;
-  margin-left: 20%;
-  margin-right: 20%;
-}
-
-form {
-  background: white;
-  display: flex;
-  justify-content: space-around;
-  margin: 0 ;
-  max-width: 100%;
-  width: 75%;
-  padding: 30px 50px;
-}
-
-.form-control {
-  min-height: 5%;
-  height: 10%;
-}
-
 .radio-group{
-  display: inline;
+  color:#cad7dd;
+  display: inline-flex;
   padding: 12px ;
   box-sizing: border-box;
 }
 
-input{
-  background-color: #f5f8f9;
-  border: 1px solid #ffffff;
-  border-radius: 5px;
-  font-size: 20px;
-  width: 65%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  transition: 0.6s;
-  outline: none;
-  -webkit-transition: 0.5s;
+.radio-item-label {
+  margin-right: 1%;
 }
+
+.radio-button-image{
+  vertical-align:middle;
+}
+
+.radio-item-text {
+  margin-left: 10%;
+  margin-top: 5%;
+  margin-right: 50%;
+}
+
+.diary-heading {
+  font-size: 44px;
+  margin-top: 0px;
+}
+
+
 
 ::placeholder {
   color: #cad7dd;
 }
 
-input[type="date"]::-webkit-calendar-picker-indicator {
-  font-size: 20px;
-  content: url(./assets/icon/calendar.svg);
-}
+/* Button Related */
 
-input:focus {
-  border: 3px solid #cad7dd;
-}
-
-.form-item-label {
-  vertical-align:middle;
-  width: 22%;
-  display: inline-block ;
-  font-family: sans-serif;
-  font-size: 20px;
-  font-weight: 500;
-  margin-bottom: 5px;
-}
-
-.radio-item-label {
-  display: inline-block ;
-  width: 22%;
-  margin-right: 20px;
-  height: 45%;
+.align-right {
+  margin-top: 10%;
+  text-align: right;
 }
 
 .submit-button{
-  width: 35%;
-  height: 60%;
+  width: 28%;
+  height: 200%;
   color: white;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 100%;
   background-color:#49c8a8 ;
   border: none;
 }
 
 .cancel-button{
-  width: 35%;
-  margin-right: 25px;
-  height: 60%;
+  width: 28%;
+  height: 200%;
   color: #373d40;
+  margin-right: 3%;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 100%;
   background-color:#f5f8f9;
   border: none;
-}
-
-.align-right {
-  padding-top: 2%;
-  padding-left: 40%;
 }
 
 
 @media only screen and (max-width: 768px) {
   .container {
     display: block;
+  }
+  .anchor {
+    position: relative;
+
   }
 
   .profile-section {
@@ -250,24 +249,29 @@ input:focus {
 
   .right-section {
     height: 100%;
-    background-color: #373d40;
+    background-color: #242424;
     margin: 0;
     padding: 0;
   }
   
   .user-form{
-    background-color: #373d40;
+    background-color: #242424;
+    width: 90%;
     margin: 0;
     padding: 0;
   }
 
+  .form-control {
+    display: grid;
+  }
+
+  .form-item-label {
+    width: 40%;
+    font-size: 120%;
+  }
   .radio-item-label {
     display: inline-block ;
     width: 28%;
-  }
-
-  .form-control {
-    display: grid;
   }
   
   input{
@@ -275,25 +279,22 @@ input:focus {
     width: 100%;
   }
 
-  .form-item-label {
-    width: 40%;
-  }
-
   .submit-button{
+    padding:2%;
+    height: 55px;
     width: 100%;
-    padding-top: 5%;
-    padding-bottom: 10%;
+    margin-bottom: 0;
   }
   
   .cancel-button{
+    padding:2%;
+    height: 55px;
     width: 100%;
-    padding-top: 5%;
-    padding-bottom: 10%;
-    margin-top: 2%;
+    margin-bottom: 10px;
   }
+
   .align-right {
-    padding-top: 0%;
-    padding-left: 0%;
+    text-align: center;
   }
   
   .diary-container {
@@ -305,12 +306,12 @@ input:focus {
     height: 0%;
   }
 
-  .second-image.rotated {
+  .profile-toggle-image.rotated {
     transform: rotate(-90deg);
     transition:none;
   } 
   
-  .second-image {
+  .profile-toggle-image {
     transform: rotate(90deg);
     transition: none;
     cursor: pointer;
@@ -319,22 +320,43 @@ input:focus {
   }
 
   .diary-text {
-    margin: 4%;
+    font-size: 10%;
+    margin-top:  10%;
+    margin-left: 6%;
+    margin-right: 6%;
   }
 
-  .orange-heading {
+  .diary-heading {
     font-size: 44px;
     margin-top: 20px;
   }
 
   .diary-paragraph{
     font-size: 20px;
+    margin-top: 50px;
   }
 
   .profile-header {
     margin-top: 15%;
     font-size: 45px;
     color: #373d40;
+  }
+
+  /* Radio Group */
+  [type=radio] + img  {
+    padding: 50%;
+  }
+  
+  .radio-group{
+    display: inline-flex;
+  }
+  
+  .radio-item-label {
+    margin-right: 5%;
+  }
+  
+  .radio-item-text {
+    margin-right: 20%;
   }
 
 }

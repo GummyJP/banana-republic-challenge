@@ -10,12 +10,12 @@ const ProfileView = ({faceSVG , handleButtonClick, isButtonPressed , arrowSVG ,a
           This is a design that you will need to code up and impress us.
         </p>
         <button
-          className={`second-image-button ${isButtonPressed ? 'active' : ''}`}
+          className={`profile-toggle-button ${isButtonPressed ? 'active' : ''}`}
           onClick={handleButtonClick}
         >
-          <div className="second-image-container">
+          <div className="profile-toggle-button-container">
             <img
-              className={`second-image ${
+              className={`profile-toggle-image ${
                 isButtonPressed ? 'rotated' : 'rotatedAgain'
               }`}
               src={!isButtonPressed ? arrowSVG : arrowRotatedSVG}

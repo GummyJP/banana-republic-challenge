@@ -5,7 +5,7 @@ const TextView = ({ isButtonPressed }) => {
   return (
     <div className={`diary-container ${isButtonPressed ? 'active' : ''}`}>
       <div className="diary-text">
-        <h2 className="orange-heading">My world today</h2>
+        <h2 className="diary-heading">My world today</h2>
         <p className="diary-paragraph">
           Pellentesque habitant morbi tristique senectus et nets et malesuada
           fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae,
